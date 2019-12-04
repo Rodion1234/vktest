@@ -14,14 +14,14 @@ import java.util.List;
 public class User {
     private  String id;
     
-    private List<User> friendsInComunity = null;
+    private List<Integer> users = null;
 
-    public List<User> getFriendsInComunity() {
-        return friendsInComunity;
+    public List<Integer> getUsers() {
+        return users;
     }
 
-    public void setFriendsInComunity(List<User> friendsInComunity) {
-        this.friendsInComunity = friendsInComunity;
+    public void setUsers(List<Integer> users) {
+        this.users = users;
     }
 
     public String getId() {
@@ -40,15 +40,5 @@ public class User {
 
     public User() {
     }
-
-    @Override
-    public String toString() {
-        String friends = "";
-        for (User user : friendsInComunity) {
-             friends = friends + user.getId() + ", ";
-        }
-        return "User{" + "id=" + id + "; friends: "+ friends +"}";
-    }
-    
     
 }

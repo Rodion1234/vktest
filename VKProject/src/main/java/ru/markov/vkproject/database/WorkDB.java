@@ -17,16 +17,16 @@ public class WorkDB {
         pstmt = conn.prepareStatement(SQL);
 
         for (User user : users) {
-            if (user.getFriendsInComunity() == null) {
+            if (user.getUsers()== null) {
                 pstmt.setString(1, user.getId());
                 pstmt.setString(2, groupId);
                 i++;
                 pstmt.execute();
             } else {
-                for (User user1 : user.getFriendsInComunity()) {
-                    if (user.getFriendsInComunity().size() != 0) {
+                for (Integer user1 : user.getUsers()) {
+                    if (user.getUsers().size() != 0) {
                         pstmt.setString(1, user.getId());
-                        pstmt.setString(2, user1.getId());
+                        pstmt.setString(2, String.valueOf(user1));
                         i++;
                         pstmt.execute();
                     }

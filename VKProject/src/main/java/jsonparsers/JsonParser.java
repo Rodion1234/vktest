@@ -50,25 +50,25 @@ public class JsonParser {
         return users;
     }
 
-    public List<User> getFriendsIsMemberExsecute(String response, List<User> users, String userId) {
-
-        List<User> friends = new ArrayList<>();
-        JSONObject obj = new JSONObject(response);
-        String[] member = obj.getString("member").split(",");
-        String[] user_id = obj.getString("user_id").split(",");
-        
-        for (int i = 0; i < member.length; i++) {
-            if (member[i].equals("1")) {
-                friends.add(new User(user_id[i]));
-            }
-        }
-        User user = new User();
-        user.setId(userId);
-        user.setFriendsInComunity(friends);
-
-        users.add(user);
-        return users;
-    }
+//    public List<User> getFriendsIsMemberExsecute(String response, List<User> users, String userId) {
+//
+//        List<User> friends = new ArrayList<>();
+//        JSONObject obj = new JSONObject(response);
+//        String[] member = obj.getString("member").split(",");
+//        String[] user_id = obj.getString("user_id").split(",");
+//        
+//        for (int i = 0; i < member.length; i++) {
+//            if (member[i].equals("1")) {
+//                friends.add(new User(user_id[i]));
+//            }
+//        }
+//        User user = new User();
+//        user.setId(userId);
+//        user.setFriendsInComunity(friends);
+//
+//        users.add(user);
+//        return users;
+//    }
 
     public boolean getError(String json) {
 
